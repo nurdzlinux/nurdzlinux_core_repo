@@ -2,6 +2,26 @@
 #
 # Script for building the NurdzLinux Core Repository
 
+echo $0
+full_path=$(realpath $0)
+dir_path=$(dirname $full_path)
+
+any_dir=$HOME/Dev/NurdzLinux/nurdzlinux-pkgbuild/any
+any_pkgbuild=$(find ${any_dir} -type f -name "*.pkg.tar.zst" | awk -F / 'BEGIN {OFS="/"} {$1=""; print $0}')
+
+x86_dir=$HOME/Dev/NurdzLinux/nurdzlinux-pkgbuild/x86_64
+x86_pkgbuild=$(find ${x86_dir} -type f -name "*.pkg.tar.zst" | awk -F / 'BEGIN {OFS="/"} {$1=""; print $0}')
+
+for x in ${any_pkgbuild}; do
+	mv ${x} any/
+	echo "Moving ${x}"
+done
+
+for x in ${x86_pkgbuild}; do
+	mv ${x} x86_64/
+	echo "Moving ${x}"
+done
+
 echo "###########################"
 echo "Building the repo database."
 echo "###########################"
