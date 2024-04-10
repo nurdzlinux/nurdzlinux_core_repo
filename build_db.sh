@@ -28,7 +28,7 @@ echo "###########################"
 
 ## Arch: any
 cd any
-rm nurdzlinux-core-repo*
+rm nurdzlinux_core_repo*
 
 echo "################################"
 echo "Building for architecture 'any'."
@@ -38,16 +38,16 @@ echo "################################"
 ## -s: signs the packages
 ## -n: only add new packages not already in database
 ## -R: remove old package files when updating their entry
-repo-add -n -R nurdzlinux-core-repo.db.tar.gz *.pkg.tar.zst
+repo-add -n -R nurdzlinux_core_repo.db.tar.gz *.pkg.tar.zst
 
 # Removing the symlinks because GitHub can't handle them.
-rm nurdzlinux-core-repo.db nurdzlinux-core-repo.db.sig nurdzlinux-core-repo.files nurdzlinux-core-repo.files.sig
+rm nurdzlinux_core_repo.db nurdzlinux_core_repo.db.sig nurdzlinux_core_repo.files nurdzlinux_core_repo.files.sig
 
 # Renaming the tar.gz files without the extension.
-mv nurdzlinux-core-repo.db.tar.gz nurdzlinux-core-repo.db
-mv nurdzlinux-core-repo.db.tar.gz.sig nurdzlinux-core-repo-db.sig
-mv nurdzlinux-core-repo.files.tar.gz nurdzlinux-core-repo.files
-mv nurdzlinux-core-repo.files.tar.gz.sig nurdzlinux-core-repo.files.sig
+mv nurdzlinux_core_repo.db.tar.gz nurdzlinux_core_repo.db
+mv nurdzlinux_core_repo.db.tar.gz.sig nurdzlinux_core_repo.db.sig
+mv nurdzlinux_core_repo.files.tar.gz nurdzlinux_core_repo.files
+mv nurdzlinux_core_repo.files.tar.gz.sig nurdzlinux_core_repo.files.sig
 
 echo "#######################################"
 echo "Packages in the repo have been updated!"
@@ -55,7 +55,7 @@ echo "#######################################"
 
 ## Arch: x86_64
 cd ../x86_64
-rm nurdzlinux-core-repo*
+rm nurdzlinux_core_repo*
 
 echo "###################################"
 echo "Building for architecture 'x86_64'."
@@ -65,16 +65,16 @@ echo "###################################"
 ## -s: signs the packages
 ## -n: only add new packages not already in database
 ## -R: remove old package files when updating their entry
-repo-add -n -R nurdzlinux-core-repo.db.tar.gz *.pkg.tar.zst
+repo-add -n -R nurdzlinux_core_repo.db.tar.gz *.pkg.tar.zst
 
 # Removing the symlinks because GitHub can't handle them.
-rm nurdzlinux-core-repo.db nurdzlinux-core-repo.db.sign nurdzlinux-core-repo.files nurdzlinux-core-repo.files.sig
+rm nurdzlinux_core_repo.db nurdzlinux_core_repo.db.sign nurdzlinux_core_repo.files nurdzlinux_core_repo.files.sig
 
 # Renaming the tar.gz files without the extension.
-mv nurdzlinux-core-repo.db.tar.gz nurdzlinux-core-repo.db
-mv nurdzlinux-core-repo.db.tar.gz.sign nurdzlinux-core-repo-db.sig
-mv nurdzlinux-core-repo.files.tar.gz nurdzlinux-core-repo.files
-mv nurdzlinux-core-repo.files.tar.gz.sig nurdzlinux-core-repo.files.sig
+mv nurdzlinux_core_repo.db.tar.gz nurdzlinux_core_repo.db
+mv nurdzlinux_core_repo.db.tar.gz.sign nurdzlinux_core_repo_db.sig
+mv nurdzlinux_core_repo.files.tar.gz nurdzlinux_core_repo.files
+mv nurdzlinux_core_repo.files.tar.gz.sig nurdzlinux_core_repo.files.sig
 
 echo "#######################################"
 echo "Packages in the repo have been updated!"
